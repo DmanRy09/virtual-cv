@@ -1,0 +1,161 @@
+/* Base styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0C1B2C; /* Dark navy blue */
+    color: #E0E0E0;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header */
+header {
+    background-color: #0A1726;
+    padding: 1rem 0;
+    border-bottom: 3px solid #D50000;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #FF5252;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+nav a {
+    color: #FF5252;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #FF5252;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+/* Paragraph and list */
+p, li {
+    font-size: 1rem;
+    color: #E0E0E0;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+}
+
+/* Glowing header text */
+.glow-text {
+    color: #D50000;
+    text-shadow: 0 0 5px #D50000, 0 0 10px #D50000, 0 0 20px #FF5252;
+}
+
+/* Lateral Button Styling */
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    color: #D50000;
+    border: 2px solid #D50000;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #D50000;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    transition: left 0.4s ease;
+}
+
+.button:hover::before {
+    left: 0;
+}
+
+.button:hover {
+    color: white;
+    transform: translateX(3px) scale(1.05);
+    box-shadow: 0 0 12px #D50000, 0 0 24px #D50000;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #0A1726;
+    color: #999;
+    font-size: 0.9rem;
+    border-top: 2px solid #D50000;
+}
+
+/* === Subtle Glow Animation === */
+
+/* Background animation */
+@keyframes backgroundGlow {
+    0% {
+        background-color: #0C1B2C;
+    }
+    50% {
+        background-color: #0F2236;
+    }
+    100% {
+        background-color: #0C1B2C;
+    }
+}
+
+body {
+    animation: backgroundGlow 10s ease-in-out infinite;
+}
+
+/* Glow effect on headings */
+h1.glow-text, h2.glow-text, h3.glow-text {
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        text-shadow: 0 0 5px #FF5252, 0 0 10px #FF5252;
+    }
+    50% {
+        text-shadow: 0 0 15px #FF5252, 0 0 30px #FF5252;
+    }
+}
